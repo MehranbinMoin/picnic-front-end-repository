@@ -12,12 +12,24 @@ const SignUpForm = () => {
 
     const handleChange = (event) => {
         setMessage('')
-        setFormData({...formData, [event.target.name]: event.target.value})
+        setFormData({ ...formData, [event.target.name]: event.target.value })
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         console.log(formData);
+    }
+
+    const isFormInvalid = () => {
+        if (formData.username === '') {
+            return true
+        }
+        if (formData.password === '') {
+            return true
+        }
+        if (formData.password !== formData.passwordConfirmation) {
+            return true
+        }
     }
 
     return (
@@ -28,7 +40,7 @@ const SignUpForm = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username: </label>
-                    <input 
+                    <input
                         type="text"
                         id="username"
                         name="username"
@@ -37,10 +49,10 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-               
+
                 <div>
-                <label htmlFor="password">Password: </label>
-                    <input 
+                    <label htmlFor="password">Password: </label>
+                    <input
                         type="text"
                         id="password"
                         name="password"
@@ -51,8 +63,8 @@ const SignUpForm = () => {
                 </div>
 
                 <div>
-                <label htmlFor="passwordConfirmation">Confirm password: </label>
-                    <input 
+                    <label htmlFor="passwordConfirmation">Confirm password: </label>
+                    <input
                         type="text"
                         id="passwordConfirmation"
                         name="passwordConfirmation"
@@ -63,7 +75,7 @@ const SignUpForm = () => {
                 </div>
 
                 <div>
-                    <button type="submit">Sign up</button>
+                    <button disabled={isFormInvalid()} type="submit">Sign up</button>
                     <button onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
