@@ -26,8 +26,9 @@ const NavBar = () => {
         <dl>
           <dt>
             <Link to='/sign-up'>Sign up</Link>
-            <br></br>
-            <Link to='/sign-in'>Log in</Link>
+          </dt>
+          <dt>
+          <Link to='/sign-in'>Log in</Link>
           </dt>
         </dl>
       )}
