@@ -9,17 +9,17 @@ const NavBar = () => {
   return (
     <nav>
       {user ? (
-        <ul>
-          <li>
-            Welcome, {user.username}
-          </li>
-        </ul>
+        <dl>
+          <dt>
+            Welcome, {user.username}!
+          </dt>
+        </dl>
       ) : (
-        <ul>
-          <li>
+        <dl>
+          <dt>
             <Link to='/sign-up'>Sign up</Link>
-          </li>
-        </ul>
+          </dt>
+        </dl>
       )}
     </nav>
   )
