@@ -27,9 +27,34 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
+               
+                <div>
+                <label htmlFor="password">Password: </label>
+                    <input 
+                        type="text"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
 
                 <div>
-                    
+                <label htmlFor="passwordConfirmation">Confirm password: </label>
+                    <input 
+                        type="text"
+                        id="passwordConfirmation"
+                        name="passwordConfirmation"
+                        value={formData.passwordConfirmation}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div>
+                    <button type="submit">Sign up</button>
+                    <button>Cancel</button>
                 </div>
             </form>
         </main>
