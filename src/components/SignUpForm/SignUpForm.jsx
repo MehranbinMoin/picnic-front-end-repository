@@ -10,6 +10,11 @@ const SignUpForm = () => {
     })
     const [message, setMessage] = useState('')
 
+    const handleChange = (event) => {
+        setMessage('')
+        setFormData({...formData, [event.target.name]: event.target.value})
+    }
+
     return (
         <main>
             <h1>Sign up</h1>
@@ -54,7 +59,7 @@ const SignUpForm = () => {
 
                 <div>
                     <button type="submit">Sign up</button>
-                    <button>Cancel</button>
+                    <button onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
         </main>
