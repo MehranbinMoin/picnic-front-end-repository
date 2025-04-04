@@ -4,7 +4,12 @@ import { Link } from "react-router"
 import { UserContext } from "../../contexts/UserContext"
 
 const NavBar = () => {
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
+
+  const handleLogOut = () => {
+    localStorage.removeItem('token')
+    setUser(null)
+  }
 
   return (
     <nav>
@@ -13,6 +18,9 @@ const NavBar = () => {
           <dt>
             Welcome, {user.username}!
           </dt>
+          <dl>
+            <Link to='/' onClick={handleLogOut}>Log out</Link>
+          </dl>
         </dl>
       ) : (
         <dl>
