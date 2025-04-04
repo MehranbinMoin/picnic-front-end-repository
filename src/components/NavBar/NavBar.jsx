@@ -19,11 +19,17 @@ const NavBar = () => {
             Welcome, {user.username}!
           </dt>
           <dl>
+            <Link to='/'>Dashboard</Link>
+          </dl>
+          <dl>
             <Link to='/' onClick={handleLogOut}>Log out</Link>
           </dl>
         </dl>
       ) : (
         <dl>
+            <dl>
+            <Link to='/'>Home</Link>
+            </dl>
           <dt>
             <Link to='/sign-up'>Sign up</Link>
           </dt>
