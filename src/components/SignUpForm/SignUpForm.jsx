@@ -15,6 +15,11 @@ const SignUpForm = () => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        console.log(formData);
+    }
+
     return (
         <main>
             <h1>Sign up</h1>
