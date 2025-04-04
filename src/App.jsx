@@ -5,12 +5,12 @@ import SignUpForm from "./components/SignUpForm/SignUpForm"
 function App() {
   return (
     <>
-    <NavBar />
-    <h1>Picnic</h1>
+      <NavBar />
+      <h1>Picnic</h1>
 
-    <Routes>
-      <Route path='sign-up' element={<SignUpForm />} />
-    </Routes>
+      <Routes>
+        <Route path='sign-up' element={<SignUpForm />} />
+      </Routes>
     </>
   )
 }
