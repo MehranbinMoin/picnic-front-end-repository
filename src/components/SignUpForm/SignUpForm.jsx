@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { signUp } from "../../services/authService";
+import { UserContext } from "../../contexts/UserContext";
 
 const SignUpForm = () => {
     const navigate = useNavigate()
@@ -11,6 +12,8 @@ const SignUpForm = () => {
     })
     const [message, setMessage] = useState('')
 
+    const { setUser } = useContext(UserContext)
+
     const handleChange = (event) => {
         setMessage('')
         setFormData({ ...formData, [event.target.name]: event.target.value })
@@ -20,7 +23,8 @@ const SignUpForm = () => {
         event.preventDefault()
         try {
             const newUser = await signUp(formData)
-            console.log(newUser);
+            setUser(newUser)
+            navigate('/')
         } catch (err) {
             setMessage(err.message)
         }
