@@ -1,32 +1,46 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router';
+import * as basketService from '../../services/basketService'
 
 const CommentForm = (props) => {
-  const [formData, setFormData] = useState({ text: '' });
+    const [formData, setFormData] = useState({ text: '' });
 
-  const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value });
-  };
+    const { basketId, commentId } = useParams();
+    console.log(basketId, commentId);
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    props.handleAddComment(formData);
-    setFormData({ text: '' });
-  };
+    useEffect(() => {
+        const fetchBasket = async () => {
+          const basketData = await basketService.show(basketId);
+          // Find comment in fetched basket data
+          setFormData(basketData.comments.find((comment) => comment._id === commentId));
+        };
+        if (basketId && commentId) fetchBasket();
+      }, [basketId, commentId]);
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='text-input'>Your comment:</label>
-      <textarea
-        required
-        type='text'
-        name='text'
-        id='text-input'
-        value={formData.text}
-        onChange={handleChange}
-      />
-      <button type='submit'>Add Comment</button>
-    </form>
-  );
+    const handleChange = (evt) => {
+        setFormData({ ...formData, [evt.target.name]: evt.target.value });
+    };
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        props.handleAddComment(formData);
+        setFormData({ text: '' });
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label htmlFor='text-input'>Your comment:</label>
+            <textarea
+                required
+                type='text'
+                name='text'
+                id='text-input'
+                value={formData.text}
+                onChange={handleChange}
+            />
+            <button type='submit'>Add Comment</button>
+        </form>
+    );
 };
 
 export default CommentForm;

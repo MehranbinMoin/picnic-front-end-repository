@@ -10,6 +10,7 @@ import BasketList from './components/BasketList/BasketList'
 import BasketDetails from './components/BasketDetails/BasketDetails'
 import * as basketService from './services/basketService'
 import BasketForm from './components/BasketForm/BasketForm'
+import CommentForm from './components/CommentForm/CommentForm'
 
 function App() {
   const { user } = useContext(UserContext)
@@ -53,6 +54,7 @@ function App() {
         {user ? (
           <>
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
+            <Route path='/baskets/:basketId/comments/:commentId/edit' element={<CommentForm />} />
             <Route path='/baskets/:basketId' element={<BasketDetails handleDeleteBasket={handleDeleteBasket} />} />
             <Route path='/baskets/new' element={<BasketForm handleAddBasket={handleAddBasket} />} />
             <Route path='/baskets/:basketId/edit' element={<BasketForm handleUpdateBasket={handleUpdateBasket} />}
