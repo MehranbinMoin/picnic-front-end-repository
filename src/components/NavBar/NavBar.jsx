@@ -25,6 +25,9 @@ const NavBar = () => {
             <Link to='/baskets'>Baskets</Link>
           </dl>
           <dl>
+            <Link to='/baskets/new'>Create Basket</Link>
+          </dl>
+          <dl>
             <Link to='/' onClick={handleLogOut}>Log out</Link>
           </dl>
         </dl>

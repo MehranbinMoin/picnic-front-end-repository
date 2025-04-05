@@ -9,6 +9,7 @@ import { UserContext } from "./contexts/UserContext"
 import BasketList from './components/BasketList/BasketList'
 import BasketDetails from './components/BasketDetails/BasketDetails'
 import * as basketService from './services/basketService'
+import BasketForm from './components/BasketForm/BasketForm'
 
 function App() {
   const { user } = useContext(UserContext)
@@ -34,6 +35,7 @@ function App() {
           <>
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
             <Route path='/baskets/:basketId' element={<BasketDetails />} />
+            <Route path='/baskets/new' element={<BasketForm />} />
           </>
         ) : (
           <>

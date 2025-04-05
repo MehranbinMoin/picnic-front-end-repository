@@ -34,6 +34,23 @@ const BasketDetails = () => {
                         {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                     </p>
                 </header>
+                <p>{basket.text}</p>
+            </section>
+            <section>
+                <h2>Comments</h2>
+                {!basket.comments.length && <p>No comments</p>}
+                {basket.comments.map((comment) => (
+                    <article key={comment._id}>
+                        <header>
+                            <p>
+                                {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
+                            </p>
+                        </header>
+                        <p>
+                            {comment.text}
+                        </p>
+                    </article>
+                ))}
             </section>
         </main>
     )
