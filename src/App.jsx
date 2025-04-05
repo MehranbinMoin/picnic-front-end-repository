@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Routes, Route } from "react-router"
 import NavBar from "./components/NavBar/NavBar"
 import SignUpForm from "./components/SignUpForm/SignUpForm"
@@ -7,9 +7,21 @@ import Landing from "./components/Landing/Landing"
 import Dashboard from "./components/Dashboard/Dashboard"
 import { UserContext } from "./contexts/UserContext"
 import BasketList from './components/BasketList/BasketList'
+import * as basketService from './services/basketService'
 
 function App() {
   const { user } = useContext(UserContext)
+
+  const [baskets, setBaskets] = useState([])
+
+  useEffect(() => {
+    const fetchAllBaskets = async () => {
+      const basketsData = await basketService.index()
+      console.log('basketsdata', basketsData);
+    }
+    if (user) fetchAllBaskets()
+  }, [user])
+
   return (
     <>
       <NavBar />
