@@ -22,10 +22,10 @@ const CommentForm = (props) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
     }
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
         if (basketId && commentId) {
-            basketService.updateComment(basketId, commentId, formData);
+           await basketService.updateComment(basketId, commentId, formData);
             navigate(`/baskets/${basketId}`);
         } else {
             props.handleAddComment(formData);
