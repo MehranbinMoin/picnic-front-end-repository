@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchAllBaskets = async () => {
       const basketsData = await basketService.index()
-      console.log('basketsdata', basketsData);
+      setBaskets(basketsData)
     }
     if (user) fetchAllBaskets()
   }, [user])
@@ -31,7 +31,7 @@ function App() {
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
           <>
-            <Route path='/baskets' element={<BasketList />} />
+            <Route path='/baskets' element={<BasketList baskets={baskets} />} />
           </>
         ) : (
           <>
