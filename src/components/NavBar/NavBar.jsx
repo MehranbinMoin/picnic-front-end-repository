@@ -19,7 +19,10 @@ const NavBar = () => {
             Welcome, {user.username}!
           </dt>
           <dl>
-            <Link to='/'>Dashboard</Link>
+            <Link to='/'>Home</Link>
+          </dl>
+          <dl>
+            <Link to='/baskets'>Baskets</Link>
           </dl>
           <dl>
             <Link to='/' onClick={handleLogOut}>Log out</Link>
