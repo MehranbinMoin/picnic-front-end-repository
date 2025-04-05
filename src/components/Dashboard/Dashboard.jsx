@@ -27,11 +27,11 @@ const Dashboard = () => {
             <p>
                 Here are all available baskets in your area.
             </p>
-              <dt>
+              <div>
               {fetchedUsers.map((user, idx) => (
-                    <li key={idx}>{user.username}</li>
+                    <div key={idx}>{user.username}</div>
                 ))}
-              </dt>
+              </div>
         </main>
     )
 }
