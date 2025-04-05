@@ -14,6 +14,16 @@ const BasketDetails = (props) => {
         setBasket({ ...basket, comments: [...basket.comments, newComment] });
     }
 
+    const handleDeleteComment = async (commentId) => {
+        console.log('commentId', commentId);
+        try {
+            await basketService.deleteComment(basket._id, commentId)
+        } catch (error) {
+            console.error('Could not delete comment:', error)
+        }
+        setBasket({ ...basket, comments: basket.comments.filter((comment) => comment._id !== commentId) })
+    }
+
     console.log('basket id is:', basketId);
 
     useEffect(() => {
@@ -60,6 +70,12 @@ const BasketDetails = (props) => {
                             <p>
                                 {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
                             </p>
+                            {comment.author._id === user._id && (
+                                <>
+                                    <Link to={`/baskets/${basket._id}/comments/${comment._id}/edit`}>Edit comment</Link>
+                                    <button onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
+                                </>
+                            )}
                         </header>
                         <p>
                             {comment.text}
