@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
-import { Routes, Route } from "react-router"
+import { Routes, Route, useNavigate } from "react-router"
 import NavBar from "./components/NavBar/NavBar"
 import SignUpForm from "./components/SignUpForm/SignUpForm"
 import SignInForm from "./components/SignInForm/SignInForm"
@@ -13,6 +13,7 @@ import BasketForm from './components/BasketForm/BasketForm'
 
 function App() {
   const { user } = useContext(UserContext)
+  const navigate = useNavigate()
 
   const [baskets, setBaskets] = useState([])
 
@@ -23,6 +24,11 @@ function App() {
     }
     if (user) fetchAllBaskets()
   }, [user])
+
+  const handleAddBasket = async (basketFormData) => {
+    console.log('basketFormData', basketFormData);
+    navigate('/baskets')
+  }
 
   return (
     <>
@@ -35,7 +41,7 @@ function App() {
           <>
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
             <Route path='/baskets/:basketId' element={<BasketDetails />} />
-            <Route path='/baskets/new' element={<BasketForm />} />
+            <Route path='/baskets/new' element={<BasketForm handleAddBasket={handleAddBasket} />} />
           </>
         ) : (
           <>

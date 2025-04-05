@@ -10,11 +10,13 @@ const BasketForm = (props) => {
     })
 
     const handleSubmit = (event) => {
-
+        event.preventDefault()
+        props.handleAddBasket(formData)
+        
     }
 
     const handleChange = (event) => {
-
+        setFormData({...formData, [event.target.name]: event.target.value})
     }
 
     return (
