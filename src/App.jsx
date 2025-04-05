@@ -26,7 +26,8 @@ function App() {
   }, [user])
 
   const handleAddBasket = async (basketFormData) => {
-    console.log('basketFormData', basketFormData);
+    const newBasket = await basketService.create(basketFormData)
+    setBaskets([newBasket, ...baskets])
     navigate('/baskets')
   }
 

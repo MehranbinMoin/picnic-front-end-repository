@@ -1,10 +1,16 @@
 import { useParams } from "react-router"
 import { useState, useEffect } from "react";
+import CommentForm from "../CommentForm/CommentForm";
 import * as basketService from '../../services/basketService'
 
 const BasketDetails = () => {
     const { basketId } = useParams()
     const [basket, setBasket] = useState(null)
+
+    const handleAddComment = async (commentFormData) => {
+        const newComment = await basketService.createComment(basketId, commentFormData);
+        setBasket({ ...basket, comments: [...basket.comments, newComment] });
+    };
 
     console.log('basket id is:', basketId);
 
@@ -38,6 +44,7 @@ const BasketDetails = () => {
             </section>
             <section>
                 <h2>Comments</h2>
+                <CommentForm handleAddComment={handleAddComment} />
                 {!basket.comments.length && <p>No comments</p>}
                 {basket.comments.map((comment) => (
                     <article key={comment._id}>
