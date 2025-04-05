@@ -7,6 +7,7 @@ import Landing from "./components/Landing/Landing"
 import Dashboard from "./components/Dashboard/Dashboard"
 import { UserContext } from "./contexts/UserContext"
 import BasketList from './components/BasketList/BasketList'
+import BasketDetails from './components/BasketDetails/BasketDetails'
 import * as basketService from './services/basketService'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         {user ? (
           <>
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
+            <Route path='/baskets/:basketId' element={<BasketDetails />} />
           </>
         ) : (
           <>

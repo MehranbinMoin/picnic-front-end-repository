@@ -15,7 +15,22 @@ const index = async () => {
     }
 }
 
+const show = async (basketId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${basketId}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+
+        return res.json()
+    } catch (error) {
+        console.log(error);
+
+    }
+}
+
 export {
     index,
-
+    show,
 }

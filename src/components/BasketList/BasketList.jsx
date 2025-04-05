@@ -12,9 +12,7 @@ const BasketList = (props) => {
                                 {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                             </p>
                         </header>
-                        <p>{basket.image}</p>
-                        <p>{basket.city}</p>
-                        <p>{basket.email}</p>
+                        <p>{basket.title}</p>
                     </article>
                 </Link>
             ))}
