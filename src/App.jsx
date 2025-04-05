@@ -31,6 +31,12 @@ function App() {
     navigate('/baskets')
   }
 
+  const handleDeleteBasket = async (basketId) => {
+    const deletedBasket = await basketService.deleteBasket(basketId)
+    setBaskets(baskets.filter((basket) => basket._id !== basketId));
+    navigate('/baskets');
+  }
+
   return (
     <>
       <NavBar />
@@ -41,7 +47,7 @@ function App() {
         {user ? (
           <>
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
-            <Route path='/baskets/:basketId' element={<BasketDetails />} />
+            <Route path='/baskets/:basketId' element={<BasketDetails handleDeleteBasket={handleDeleteBasket} />} />
             <Route path='/baskets/new' element={<BasketForm handleAddBasket={handleAddBasket} />} />
           </>
         ) : (

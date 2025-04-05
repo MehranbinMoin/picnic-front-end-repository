@@ -1,16 +1,18 @@
 import { useParams } from "react-router"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import CommentForm from "../CommentForm/CommentForm";
+import { UserContext } from "../../contexts/UserContext";
 import * as basketService from '../../services/basketService'
 
-const BasketDetails = () => {
+const BasketDetails = (props) => {
     const { basketId } = useParams()
+    const { user } = useContext(UserContext)
     const [basket, setBasket] = useState(null)
 
     const handleAddComment = async (commentFormData) => {
         const newComment = await basketService.createComment(basketId, commentFormData);
         setBasket({ ...basket, comments: [...basket.comments, newComment] });
-    };
+    }
 
     console.log('basket id is:', basketId);
 
@@ -39,6 +41,11 @@ const BasketDetails = () => {
                     <p>
                         {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                     </p>
+                    {basket.author._id === user._id && (
+                        <>
+                            <button onClick={() => props.handleDeleteBasket(basketId)}>Delete</button>
+                        </>
+                    )}
                 </header>
                 <p>{basket.text}</p>
             </section>

@@ -62,11 +62,26 @@ const createComment = async (basketId, commentFormData) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
+
+  const deleteBasket = async (basketId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${basketId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 export {
     index,
     show,
     create,
     createComment,
+    deleteBasket,
 }
