@@ -78,10 +78,27 @@ const createComment = async (basketId, commentFormData) => {
     }
   }
 
+  async function update(basketId, basketFormData) {
+    try {
+      const res = await fetch(`${BASE_URL}/${basketId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(basketFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 export {
     index,
     show,
     create,
     createComment,
     deleteBasket,
+    update,
 }

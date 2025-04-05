@@ -1,6 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useParams } from "react-router"
+import * as basketService from '../../services/basketService'
+
 
 const BasketForm = (props) => {
+    const { basketId } = useParams();
+    console.log(basketId);
     const [formData, setFormData] = useState({
         image: '',
         title: '',
@@ -9,18 +14,31 @@ const BasketForm = (props) => {
         email: '',
     })
 
+    useEffect(() => {
+        const fetchBasket = async () => {
+          const basketData = await basketService.show(basketId);
+          setFormData(basketData);
+        };
+        if (basketId) fetchBasket();
+        return () => setFormData({ image: '', title: '', description: '', email: '', city: '' })
+      }, [basketId]);
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleAddBasket(formData)
-        
+        if (basketId) {
+            props.handleUpdateBasket(basketId, formData);
+          } else {
+            props.handleAddBasket(formData)
+          }
     }
 
     const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.value})
+        setFormData({ ...formData, [event.target.name]: event.target.value })
     }
 
     return (
         <main>
+            <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="image">Photo</label>
                 <input

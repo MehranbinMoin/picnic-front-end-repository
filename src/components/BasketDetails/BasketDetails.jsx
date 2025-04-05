@@ -1,4 +1,4 @@
-import { useParams } from "react-router"
+import { useParams, Link } from "react-router"
 import { useState, useEffect, useContext } from "react";
 import CommentForm from "../CommentForm/CommentForm";
 import { UserContext } from "../../contexts/UserContext";
@@ -43,6 +43,7 @@ const BasketDetails = (props) => {
                     </p>
                     {basket.author._id === user._id && (
                         <>
+                            <Link to={`/baskets/${basketId}/edit`}>Edit</Link>
                             <button onClick={() => props.handleDeleteBasket(basketId)}>Delete</button>
                         </>
                     )}

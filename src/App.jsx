@@ -37,6 +37,12 @@ function App() {
     navigate('/baskets');
   }
 
+  const handleUpdateBasket = async (basketId, basketFormData) => {
+    const updatedBasket = await basketService.update(basketId, basketFormData);
+    setBaskets(baskets.map((basket) => (basketId === basket._id ? updatedBasket : basket)));
+    navigate(`/baskets/${basketId}`);
+  }
+
   return (
     <>
       <NavBar />
@@ -49,6 +55,8 @@ function App() {
             <Route path='/baskets' element={<BasketList baskets={baskets} />} />
             <Route path='/baskets/:basketId' element={<BasketDetails handleDeleteBasket={handleDeleteBasket} />} />
             <Route path='/baskets/new' element={<BasketForm handleAddBasket={handleAddBasket} />} />
+            <Route path='/baskets/:basketId/edit' element={<BasketForm handleUpdateBasket={handleUpdateBasket} />}
+            />
           </>
         ) : (
           <>
