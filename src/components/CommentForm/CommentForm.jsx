@@ -8,24 +8,30 @@ const CommentForm = (props) => {
     const { basketId, commentId } = useParams();
     console.log(basketId, commentId);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         const fetchBasket = async () => {
-          const basketData = await basketService.show(basketId);
-          // Find comment in fetched basket data
-          setFormData(basketData.comments.find((comment) => comment._id === commentId));
+            const basketData = await basketService.show(basketId);
+            setFormData(basketData.comments.find((comment) => comment._id === commentId));
         };
         if (basketId && commentId) fetchBasket();
-      }, [basketId, commentId]);
+    }, [basketId, commentId]);
 
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value });
-    };
+    }
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        props.handleAddComment(formData);
+        if (basketId && commentId) {
+            basketService.updateComment(basketId, commentId, formData);
+            navigate(`/baskets/${basketId}`);
+        } else {
+            props.handleAddComment(formData);
+        }
         setFormData({ text: '' });
-    };
+    }
 
     return (
         <form onSubmit={handleSubmit}>

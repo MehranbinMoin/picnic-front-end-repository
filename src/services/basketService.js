@@ -108,6 +108,22 @@ const createComment = async (basketId, commentFormData) => {
       }
   }
 
+  const updateComment = async (basketId, commentId, commentFormData) => {
+    try {
+      const res = await fetch(`${BASE_URL}/${basketId}/comments/${commentId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(commentFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 export {
     index,
     show,
@@ -116,4 +132,5 @@ export {
     deleteBasket,
     update,
     deleteComment,
+    updateComment,
 }
