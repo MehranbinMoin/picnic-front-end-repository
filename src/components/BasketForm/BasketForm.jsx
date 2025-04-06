@@ -41,15 +41,8 @@ return (
     <main>
         <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="image">Photo</label>
-            <input
-                type="text"
-                required
-                name="image"
-                id="image"
-                value={formData.image}
-                onChange={handleChange}
-            />
+            <label>Photo of basket</label>
+            <UploadWidget formData={formData} setFormData={setFormData}/>
 
             <label htmlFor="title">Basket Title</label>
             <input
@@ -93,7 +86,6 @@ return (
 
             <button type="submit">Create Basket</button>
         </form>
-        <UploadWidget />
     </main>
 )
 }

@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import CommentForm from "../CommentForm/CommentForm";
 import { UserContext } from "../../contexts/UserContext";
 import * as basketService from '../../services/basketService'
+import styles from './BasketDetails.module.css'
 
 const BasketDetails = (props) => {
     const { basketId } = useParams()
@@ -43,7 +44,7 @@ const BasketDetails = (props) => {
         <main>
             <section>
                 <header>
-                    <p>{basket.image}</p>
+                    <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
                     <h3>{basket.title}</h3>
                     <h3>{basket.description}</h3>
                     <h3>{basket.city}</h3>
