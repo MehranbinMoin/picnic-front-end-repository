@@ -12,6 +12,7 @@ import * as basketService from './services/basketService'
 import BasketForm from './components/BasketForm/BasketForm'
 import CommentForm from './components/CommentForm/CommentForm'
 
+
 function App() {
   const { user } = useContext(UserContext)
   const navigate = useNavigate()
