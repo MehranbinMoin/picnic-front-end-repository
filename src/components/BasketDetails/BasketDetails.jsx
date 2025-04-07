@@ -41,14 +41,14 @@ const BasketDetails = (props) => {
     if (!basket) return <main>Loading...</main>
 
     return (
-        <main>
+        <main className={styles.form}>
             <section>
                 <header>
                     <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
                     <h3>{basket.title}</h3>
-                    <h3>{basket.description}</h3>
-                    <h3>{basket.city}</h3>
-                    <h3>{basket.email}</h3>
+                    <h3>Description: {basket.description}</h3>
+                    <h3>Basket is located in {basket.city}</h3>
+                    <h3>Contact information: {basket.email}</h3>
                     <p>
                         {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                     </p>
@@ -74,7 +74,9 @@ const BasketDetails = (props) => {
                             {comment.author._id === user._id && (
                                 <>
                                     <Link to={`/baskets/${basket._id}/comments/${comment._id}/edit`}>Edit comment</Link>
-                                    <button onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
+                                    <br></br>
+                                    <br></br>
+                                    <button className={styles.button} onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
                                 </>
                             )}
                         </header>

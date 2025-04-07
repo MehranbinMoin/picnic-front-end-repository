@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import * as basketService from '../../services/basketService'
+import styles from './CommentForm.module.css'
 
 const CommentForm = (props) => {
     const [formData, setFormData] = useState({ text: '' });
@@ -35,8 +36,10 @@ const CommentForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='text-input'>Your comment:</label>
+            <label htmlFor='text-input'>Your comments:</label>
+            <br></br>
             <textarea
+                className={styles.formInput}
                 required
                 type='text'
                 name='text'
@@ -44,7 +47,8 @@ const CommentForm = (props) => {
                 value={formData.text}
                 onChange={handleChange}
             />
-            <button type='submit'>Add Comment</button>
+            <br></br>
+            <button className={styles.button} type='submit'>Add Comment</button>
         </form>
     );
 };

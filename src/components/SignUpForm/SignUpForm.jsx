@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { signUp } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
+import styles from './SignUpForm.module.css'
 
 const SignUpForm = () => {
     const navigate = useNavigate()
@@ -43,7 +44,7 @@ const SignUpForm = () => {
     }
 
     return (
-        <main>
+        <main className={styles.form}>
             <h1>Sign up</h1>
             <p>{message}</p>
 
@@ -51,6 +52,7 @@ const SignUpForm = () => {
                 <div>
                     <label htmlFor="username">Username: </label>
                     <input
+                        className={styles.formInput}
                         type="text"
                         id="username"
                         name="username"
@@ -59,10 +61,11 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-
+                <br></br>
                 <div>
                     <label htmlFor="password">Password: </label>
                     <input
+                        className={styles.formInput}
                         type="text"
                         id="password"
                         name="password"
@@ -71,10 +74,11 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-
+                <br></br>
                 <div>
                     <label htmlFor="passwordConfirmation">Confirm password: </label>
                     <input
+                        className={styles.formInput}
                         type="text"
                         id="passwordConfirmation"
                         name="passwordConfirmation"
@@ -83,10 +87,12 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-
+                <br></br>
                 <div>
-                    <button disabled={isFormInvalid()} type="submit">Sign up</button>
-                    <button onClick={() => navigate('/')}>Cancel</button>
+                    <button className={styles.button} disabled={isFormInvalid()} type="submit">Sign up</button>
+                    <br></br>
+                    <br></br>
+                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
         </main>

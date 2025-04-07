@@ -1,12 +1,5 @@
-.form {
-    border: 2.5px rgb(255, 0, 85) solid;
-    padding: 5px;
-}
-
-.BasketImage {
-    width: 500px;
-    height: 350px;
-    object-fit: cover;
+.formInput {
+    color: black;
 }
 
 .button {
@@ -18,4 +11,11 @@
 .button:hover {
     background-color: #04AA6D;
     color: white;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
