@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  font-family: "Bungee Tint", sans-serif;
+  font-family: "Albert Sans", sans-serif;
 }
 
 html,
 body {
- background-color: orange;
+ background-color: rgb(255, 140, 0);
 }
 
 .DashboardLogo {

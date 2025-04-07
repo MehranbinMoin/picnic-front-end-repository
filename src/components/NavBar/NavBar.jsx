@@ -1,48 +1,48 @@
 import { useContext } from "react"
 import { Link } from "react-router"
-
+import styles from './NavBar.module.css'
 import { UserContext } from "../../contexts/UserContext"
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext)
-
+  
   const handleLogOut = () => {
     localStorage.removeItem('token')
     setUser(null)
   }
-
+  
   return (
-    <nav>
+    <nav className={styles.container}>
       {user ? (
-        <dl>
-          <dt>
+        <ul className={styles.navList}>
+          <li className={styles.welcomeItem}>
             Welcome, {user.username}!
-          </dt>
-          <dl>
+          </li>
+          <li>
             <Link to='/'>Home</Link>
-          </dl>
-          <dl>
+          </li>
+          <li>
             <Link to='/baskets'>Baskets</Link>
-          </dl>
-          <dl>
+          </li>
+          <li>
             <Link to='/baskets/new'>Create Basket</Link>
-          </dl>
-          <dl>
+          </li>
+          <li>
             <Link to='/' onClick={handleLogOut}>Log out</Link>
-          </dl>
-        </dl>
+          </li>
+        </ul>
       ) : (
-        <dl>
-            <dl>
+        <ul className={styles.navList}>
+          <li>
             <Link to='/'>Home</Link>
-            </dl>
-          <dt>
+          </li>
+          <li>
             <Link to='/sign-up'>Sign up</Link>
-          </dt>
-          <dt>
-          <Link to='/sign-in'>Log in</Link>
-          </dt>
-        </dl>
+          </li>
+          <li>
+            <Link to='/sign-in'>Log in</Link>
+          </li>
+        </ul>
       )}
     </nav>
   )
