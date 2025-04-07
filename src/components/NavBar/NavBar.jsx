@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Link } from "react-router"
 import styles from './NavBar.module.css'
 import { UserContext } from "../../contexts/UserContext"
+import HeaderLogo from "../../assets/Photos/headerLogo.png"
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext)
@@ -13,6 +14,9 @@ const NavBar = () => {
   
   return (
     <nav className={styles.container}>
+      <div className={styles.logoContainer}>
+        <img src={HeaderLogo} alt="Site Logo" className={styles.logo} />
+      </div>
       {user ? (
         <ul className={styles.navList}>
           <li className={styles.welcomeItem}>
