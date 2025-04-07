@@ -13,7 +13,6 @@ const UploadWidget = (props) => {
                 showAdvancedOptions: true,
                 sources: ['local', 'url'],
                 multiple: false,
-                clientAllowedFormats: ['images'],
                 maxImageFileSize: 2000000,
         }, function(error, result) {
                 console.log(result);

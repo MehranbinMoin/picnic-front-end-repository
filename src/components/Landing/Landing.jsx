@@ -1,7 +1,9 @@
+import PicnicLogo from "../../assets/Photos/picnic.png"
+
 const Landing = () => {
     return (
       <main>
-        <h1>Picnic company logo here.</h1>
+        <img src={PicnicLogo} className="PicnicLogo"></img>
         <p>Register your own Picnic account to give and receive baskets in your local area.</p>
       </main>
     );

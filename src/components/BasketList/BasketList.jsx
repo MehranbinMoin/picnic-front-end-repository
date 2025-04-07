@@ -2,6 +2,8 @@ import { Link } from "react-router"
 import styles from './BasketList.module.css'
 
 const BasketList = (props) => {
+    console.log(props);
+    
     return (
         <main>
             <div className={styles.CardContainer}>
