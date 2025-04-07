@@ -39,7 +39,7 @@ const BasketForm = (props) => {
     }
 
 return (
-    <main>
+    <main className={styles.form}>
         <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
         <form onSubmit={handleSubmit}>
             <label>Photo of basket</label>
