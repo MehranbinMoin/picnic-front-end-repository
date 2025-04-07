@@ -22,6 +22,7 @@ const BasketList = (props) => {
                 </Link>
             ))}
             </div>
+            <footer>© 2025 picnic</footer>
         </main>
     )
 }

@@ -44,18 +44,20 @@ const BasketDetails = (props) => {
         <main className={styles.form}>
             <section>
                 <header>
+                    <p>
+                        {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
+                    </p>
                     <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
                     <h3>{basket.title}</h3>
                     <h3>Description: {basket.description}</h3>
                     <h3>Basket is located in {basket.city}</h3>
                     <h3>Contact information: {basket.email}</h3>
-                    <p>
-                        {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
-                    </p>
                     {basket.author._id === user._id && (
                         <>
-                            <Link to={`/baskets/${basketId}/edit`}>Edit</Link>
-                            <button onClick={() => props.handleDeleteBasket(basketId)}>Delete</button>
+                            <Link to={`/baskets/${basketId}/edit`}>Edit Basket</Link>
+                            <br></br>
+                            <br></br>
+                            <button className={styles.button} onClick={() => props.handleDeleteBasket(basketId)}>Delete Basket</button>
                         </>
                     )}
                 </header>

@@ -15,6 +15,7 @@ const Dashboard = () => {
       <div className="LogoContainer">
         <img src={DashboardLogo} className="DashboardLogo"></img>
       </div>
+      <footer>© 2025 picnic</footer>
     </main>
   )
 }

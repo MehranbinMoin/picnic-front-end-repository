@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { signIn } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
 import styles from './SignInForm.module.css'
+import FooterLogo from "../../assets/Photos/footer.png"
 
 const SignInForm = () => {
     const navigate = useNavigate()
@@ -78,6 +79,10 @@ const SignInForm = () => {
                     <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
+            <footer>
+                <img src={FooterLogo} className="FooterLogo" alt="Footer logo of a rabbit and turtle"></img>
+            </footer>
+            <footer>© 2025 picnic</footer>
         </main>
     )
 }
