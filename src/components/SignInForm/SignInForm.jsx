@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { signIn } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
+import styles from './SignInForm.module.css'
 
 const SignInForm = () => {
     const navigate = useNavigate()
@@ -39,7 +40,7 @@ const SignInForm = () => {
     }
 
     return (
-        <main>
+        <main className={styles.form}>
             <h1>Log in</h1>
             <p>{message}</p>
 
@@ -47,6 +48,7 @@ const SignInForm = () => {
                 <div>
                     <label htmlFor="username">Username: </label>
                     <input
+                        className={styles.formInput}
                         type="text"
                         id="username"
                         name="username"
@@ -55,10 +57,11 @@ const SignInForm = () => {
                         required
                     />
                 </div>
-
+                <br></br>
                 <div>
                     <label htmlFor="password">Password: </label>
                     <input
+                        className={styles.formInput}
                         type="text"
                         id="password"
                         name="password"
@@ -67,10 +70,12 @@ const SignInForm = () => {
                         required
                     />
                 </div>
-
+                <br></br>
                 <div>
-                    <button disabled={isFormInvalid()} type="submit">Log in</button>
-                    <button onClick={() => navigate('/')}>Cancel</button>
+                    <button className={styles.button} disabled={isFormInvalid()} type="submit">Log in</button>
+                    <br></br>
+                    <br></br>
+                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
         </main>

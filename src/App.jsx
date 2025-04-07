@@ -48,8 +48,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <h1>Picnic</h1>
-
+      
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
