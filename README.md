@@ -9,11 +9,9 @@ A user can sign into the Picnic app to create a basket of food they would like t
 
 **Getting started**: 
 
-**Deployed app**: Coming soon!
-
-**Link to planning materials**: https://docs.google.com/document/d/1f_O_PYV1jzUIPr7-tvNaxxdJplHC6t7A9YyiTsy2kbs/edit?usp=sharing 
-
-**Link to the back-end repository**: https://github.com/MehranbinMoin/picnic-back-end-repository
+1. **Deployed app**: Coming soon!
+2. **Link to planning materials**: https://docs.google.com/document/d/1f_O_PYV1jzUIPr7-tvNaxxdJplHC6t7A9YyiTsy2kbs/edit?usp=sharing
+3. **Link to the back-end repository**: https://github.com/MehranbinMoin/picnic-back-end-repository
 
 **Attributions**: 
 
