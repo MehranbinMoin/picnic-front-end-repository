@@ -10,7 +10,7 @@ A user can sign into the Picnic app to create a basket of food they would like t
 **Getting started**: 
 
 **Deployed app**: Coming soon!
-**Link to planning materials**: [Google Doc]([url](https://docs.google.com/document/d/1f_O_PYV1jzUIPr7-tvNaxxdJplHC6t7A9YyiTsy2kbs/edit?usp=sharing)) 
+**Link to planning materials**: [Google Doc]([url](https://docs.google.com/document/d/1f_O_PYV1jzUIPr7-tvNaxxdJplHC6t7A9YyiTsy2kbs/edit?usp=sharing))  
 **Link to the back-end repository**:
 
 **Attributions**: This section should include links to any external resources (such as libraries or assets) you used to develop your application that require attribution. You can exclude this section if it does not apply to your application.
