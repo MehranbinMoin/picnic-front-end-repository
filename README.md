@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-# React + Vite
+**Screenshot/Logo**: 
+![picnic_logo](https://github.com/user-attachments/assets/e379a046-6b7f-40e2-ba7d-16640e8b9a37)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# picnic-front-end-repository
->>>>>>> ea8d0f5f821f161092fa0c74e9644c01c167a68e
+Your app’s name: Include a description of your app and its functionality. Background info about the app and why you built it is a nice touch.
+Getting started: This section should include a link to your deployed app, a link to your planning materials, and a link to the back-end repository.
+Attributions: This section should include links to any external resources (such as libraries or assets) you used to develop your application that require attribution. You can exclude this section if it does not apply to your application.
+Technologies used: List the principal technologies used by your application, for example: JavaScript and any major frameworks or libraries.
+Next steps: Planned future enhancements (stretch goals).
