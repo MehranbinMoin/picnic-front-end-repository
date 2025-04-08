@@ -15,8 +15,16 @@ A user can sign into the Picnic app to create a basket of food they would like t
 
 **Link to the back-end repository**: https://github.com/MehranbinMoin/picnic-back-end-repository
 
-**Attributions**: This section should include links to any external resources (such as libraries or assets) you used to develop your application that require attribution. You can exclude this section if it does not apply to your application.
+**Attributions**: 
 
-**Technologies used**: List the principal technologies used by your application, for example: JavaScript and any major frameworks or libraries.
+1. Module 3 GA class lecture and labs materials.
+2. Used the following resrouce to help with styling buttons on the app: https://www.w3schools.com/css/css3_buttons.asp
+3. Used Cloudinary for the photo upload feature on basket form: https://cloudinary.com/documentation/react_integration
 
-**Next steps**: Planned future enhancements (stretch goals).
+**Technologies used**: HTML, CSS. JavaScript, Express, Node, React, MongoDB
+
+**Next steps**: 
+
+1. Expand the site, so that users nationwide can upload/share baskets.
+2. Add filter option, so that users can filter baskets by regional location in the USA.
+3. Add a Google Maps API feature on the dashboard, so that users can see a pin in all locations where there are baskets available.
