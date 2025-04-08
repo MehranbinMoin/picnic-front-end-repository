@@ -1,6 +1,6 @@
 **Screenshot/Logo**: 
 
-                                                ![picnic_logo](https://github.com/user-attachments/assets/e379a046-6b7f-40e2-ba7d-16640e8b9a37)
+![picnic_logo](https://github.com/user-attachments/assets/e379a046-6b7f-40e2-ba7d-16640e8b9a37)
 
 
 **Your app’s name**: picnic
