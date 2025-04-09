@@ -45,6 +45,38 @@
     color: white;
   }
 
+  .editBasketButton {
+    background-color: rgb(255, 105, 110);
+    border-radius: 5px;
+    transition-duration: 0.4s
+  }
+
+  .editBasketButton:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .editBasketButtonColor {
+    color: white;
+    font-weight: 400;
+  }
+
+  .editCommentButton {
+    background-color: rgb(255, 105, 110);
+    border-radius: 5px;
+    transition-duration: 0.4s
+  }
+
+  .editCommentButton:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .editCommentButtonColor {
+    color: white;
+    font-weight: 400;
+  }
+
   section {
     width: 100%;
     margin-top: 20px;
@@ -75,6 +107,7 @@ h2, h3 {
 .editPlusDeleteButtons {
     display: flex;
     flex-direction: row;
+    gap: 5px;
     align-items: center;
     margin: 15px 15px 0px 15px;
 }

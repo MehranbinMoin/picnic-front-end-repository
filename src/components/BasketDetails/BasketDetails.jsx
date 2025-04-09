@@ -42,58 +42,58 @@ const BasketDetails = (props) => {
 
     return (
         <div className={styles.container}>
-        <main className={styles.form}>
-            <section>
-                <header>
-                    <p>
-                        {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
-                    </p>
-                    <br></br>
-                    <div className={styles.imageContainer}>
-                    <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
-                    </div>
-                    <h3>{basket.title}</h3>
-                    <h3>Description: {basket.description}</h3>
-                    <h3>Basket is located in {basket.city}</h3>
-                    <h3>Contact information: {basket.email}</h3>
-                    {basket.author._id === user._id && (
-                        <>
-                            <Link to={`/baskets/${basketId}/edit`}>Edit Basket</Link>
-                            <br></br>
-                            <br></br>
-                            <button className={styles.button} onClick={() => props.handleDeleteBasket(basketId)}>Delete Basket</button>
-                        </>
-                    )}
-                </header>
-                <p>{basket.text}</p>
-            </section>
-            <section className={styles.commentSection}>
-                <h2>Comments</h2>
-                <CommentForm handleAddComment={handleAddComment} />
-                <br></br>
-                {!basket.comments.length && <p>No comments</p>}
-                {basket.comments.map((comment) => (
-                    <article className={styles.individualComment} key={comment._id}>
-                        <header className={styles.commentHeader}>
-                            <p>
-                                {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
-                            </p>
-                            {comment.author._id === user._id && (
-                                <div className={styles.editPlusDeleteButtons}>
-                                    <Link to={`/baskets/${basket._id}/comments/${comment._id}/edit`}>Edit comment</Link>
-                                    <br></br>
-                                    <br></br>
-                                    <button className={styles.button} onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
-                                </div>
-                            )}
-                        </header>
-                        <div>
-                            {comment.text}
+            <main className={styles.form}>
+                <section>
+                    <header>
+                        <p>
+                            {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
+                        </p>
+                        <br></br>
+                        <div className={styles.imageContainer}>
+                            <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
                         </div>
-                    </article>
-                ))}
-            </section>
-        </main>
+                        <h3>{basket.title}</h3>
+                        <h3>Description: {basket.description}</h3>
+                        <h3>Basket is located in {basket.city}</h3>
+                        <h3>Contact information: {basket.email}</h3>
+                        {basket.author._id === user._id && (
+                            <div className={styles.editPlusDeleteButtons}>
+                                <button className={styles.editBasketButton}>
+                                    <Link className={styles.editBasketButtonColor} to={`/baskets/${basketId}/edit`}>Edit Basket</Link>
+                                </button>
+                                <button className={styles.button} onClick={() => props.handleDeleteBasket(basketId)}>Delete Basket</button>
+                            </div>
+                        )}
+                    </header>
+                    <p>{basket.text}</p>
+                </section>
+                <section className={styles.commentSection}>
+                    <h2>Comments</h2>
+                    <CommentForm handleAddComment={handleAddComment} />
+                    <br></br>
+                    {!basket.comments.length && <p>No comments</p>}
+                    {basket.comments.map((comment) => (
+                        <article className={styles.individualComment} key={comment._id}>
+                            <header className={styles.commentHeader}>
+                                <p>
+                                    {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
+                                </p>
+                                {comment.author._id === user._id && (
+                                    <div className={styles.editPlusDeleteButtons}>
+                                        <button className={styles.editCommentButton}>
+                                            <Link className={styles.editCommentButtonColor} to={`/baskets/${basket._id}/comments/${comment._id}/edit`}>Edit comment</Link>
+                                        </button>
+                                        <button className={styles.button} onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
+                                    </div>
+                                )}
+                            </header>
+                            <div>
+                                {comment.text}
+                            </div>
+                        </article>
+                    ))}
+                </section>
+            </main>
         </div>
     )
 }
