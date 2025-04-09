@@ -35,6 +35,7 @@ const CommentForm = (props) => {
     }
 
     return (
+        <div className="content-container">
         <form onSubmit={handleSubmit}>
             <label htmlFor='text-input'>Your comments:</label>
             <br></br>
@@ -50,6 +51,7 @@ const CommentForm = (props) => {
             <br></br>
             <button className={styles.button} type='submit'>Add Comment</button>
         </form>
+        </div>
     );
 };
 

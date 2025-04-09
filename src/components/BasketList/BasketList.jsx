@@ -4,6 +4,7 @@ import styles from './BasketList.module.css'
 const BasketList = (props) => {
 
     return (
+        <div className="content-container">
         <main>
             <div className={styles.CardContainer}>
                 {props.baskets.map((basket) => (
@@ -25,6 +26,7 @@ const BasketList = (props) => {
                 ))}
             </div>
         </main>
+        </div>
     )
 }
 

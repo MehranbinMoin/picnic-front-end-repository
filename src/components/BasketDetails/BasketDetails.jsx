@@ -41,6 +41,7 @@ const BasketDetails = (props) => {
     if (!basket) return <main>Loading...</main>
 
     return (
+        <div className="content-container">
         <div className={styles.container}>
             <main className={styles.form}>
                 <section>
@@ -94,6 +95,7 @@ const BasketDetails = (props) => {
                     ))}
                 </section>
             </main>
+        </div>
         </div>
     )
 }

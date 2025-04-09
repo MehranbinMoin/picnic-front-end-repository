@@ -19,8 +19,6 @@ const BasketForm = (props) => {
         email: '',
     })
 
-//  author._id
-
     const [basketDetails, setBasketDetails] = useState({})
 
     useEffect(() => {
@@ -48,7 +46,7 @@ const BasketForm = (props) => {
     }
 
 return (
-    <>
+    <div className="content-container">
     { basketId && basketDetails?.author?._id !== user._id ? (
         <>
         <h1>You don't have permission to edit this basket!</h1>
@@ -107,6 +105,6 @@ return (
             <button className={styles.button} type="submit">{basketId ? 'Update Basket' : 'Create Basket'}</button>
         </form>
     </main>)
-} </>
+} </div> 
 )}
 export default BasketForm;

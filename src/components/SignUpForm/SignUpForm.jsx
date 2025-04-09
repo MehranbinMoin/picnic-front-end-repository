@@ -45,6 +45,7 @@ const SignUpForm = () => {
     }
 
     return (
+        <div className="content-container">
         <main className={styles.form}>
             <h1>Sign up</h1>
             <p>{message}</p>
@@ -97,6 +98,7 @@ const SignUpForm = () => {
                 </div>
             </form>
         </main>
+        </div>
     )
 }
 

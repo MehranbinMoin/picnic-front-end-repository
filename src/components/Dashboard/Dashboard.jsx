@@ -11,6 +11,7 @@ const Dashboard = () => {
 
 const youtubeVideo = 'hIIzBwenOAs'
   return (
+    <div className="content-container">
     <main className={styles.Main}>
       <h1>A word from the founder!</h1>
       <div className={styles.videoContainer}>
@@ -24,6 +25,7 @@ const youtubeVideo = 'hIIzBwenOAs'
         ></iframe>
       </div>
     </main>
+    </div>
   )
 }
 
