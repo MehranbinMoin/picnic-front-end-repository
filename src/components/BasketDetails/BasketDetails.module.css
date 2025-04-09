@@ -1,11 +1,12 @@
 .form {
-    border: 2.5px rgb(255, 0, 85) solid;
+    border: 10px rgb(45, 106, 79) solid;
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: fit-content;
+    background-color: rgb(192, 57, 109);
 }
 
 .BasketImage {
