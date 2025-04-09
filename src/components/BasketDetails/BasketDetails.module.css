@@ -1,3 +1,20 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: orange;
+}
+
+.imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 10px;
+}
+
 .form {
     border: 10px rgb(45, 106, 79) solid;
     padding: 5px;
@@ -5,12 +22,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: fit-content;
+    width: 700px;
+    max-width: 90%;
+    margin: auto;
     background-color: rgb(192, 57, 109);
 }
 
 .BasketImage {
-    width: 500px;
+    width: 100%;
     height: 350px;
     object-fit: cover;
 }
@@ -25,3 +44,24 @@
     background-color: #04AA6D;
     color: white;
   }
+
+  section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+.commentSection {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    margin: 10px 0;
+}

@@ -41,13 +41,17 @@ const BasketDetails = (props) => {
     if (!basket) return <main>Loading...</main>
 
     return (
+        <div className={styles.container}>
         <main className={styles.form}>
             <section>
                 <header>
                     <p>
                         {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                     </p>
+                    <br></br>
+                    <div className={styles.imageContainer}>
                     <img className={styles.BasketImage} src={basket.image} alt={`Image of ${basket.description}`}></img>
+                    </div>
                     <h3>{basket.title}</h3>
                     <h3>Description: {basket.description}</h3>
                     <h3>Basket is located in {basket.city}</h3>
@@ -63,13 +67,13 @@ const BasketDetails = (props) => {
                 </header>
                 <p>{basket.text}</p>
             </section>
-            <section>
+            <section className={styles.commentSection}>
                 <h2>Comments</h2>
                 <CommentForm handleAddComment={handleAddComment} />
                 {!basket.comments.length && <p>No comments</p>}
                 {basket.comments.map((comment) => (
                     <article key={comment._id}>
-                        <header>
+                        <header className={styles.commentHeader}>
                             <p>
                                 {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
                             </p>
@@ -89,6 +93,7 @@ const BasketDetails = (props) => {
                 ))}
             </section>
         </main>
+        </div>
     )
 }
 
