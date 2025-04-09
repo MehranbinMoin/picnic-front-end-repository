@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useParams } from "react-router"
 import * as basketService from '../../services/basketService'
 import UploadWidget from "../UploadWidget";
 import styles from './BasketForm.module.css'
+import { UserContext } from "../../contexts/UserContext";
 
 
 const BasketForm = (props) => {
-    const { basketId } = useParams();
+    const { user } = useContext(UserContext)
+    console.log(user);
+    const { basketId } = useParams()
     console.log(basketId);
     const [formData, setFormData] = useState({
         image: '',
@@ -16,10 +19,16 @@ const BasketForm = (props) => {
         email: '',
     })
 
+//  author._id
+
+    const [basketDetails, setBasketDetails] = useState({})
+
     useEffect(() => {
         const fetchBasket = async () => {
             const basketData = await basketService.show(basketId);
             setFormData(basketData);
+            setBasketDetails(basketData)
+            console.log(basketData);
         };
         if (basketId) fetchBasket();
         return () => setFormData({ image: '', title: '', description: '', email: '', city: '' })
@@ -39,7 +48,9 @@ const BasketForm = (props) => {
     }
 
 return (
-    <main className={styles.form}>
+    <>
+    { basketDetails?.author?._id === user._id ? 
+    (<main className={styles.form}>
         <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
         <form onSubmit={handleSubmit}>
             <label>Photo of basket</label>
@@ -91,7 +102,10 @@ return (
             <br></br>
             <button className={styles.button} type="submit">Create Basket</button>
         </form>
-    </main>
+    </main>) : (<>
+    <h1>You don't have permission to edit this basket!</h1>
+    </>)
+} </>
 )
 }
 export default BasketForm;
