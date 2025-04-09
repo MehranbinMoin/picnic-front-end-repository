@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from "react-router"
 import NavBar from "./components/NavBar/NavBar"
+import Footer from './components/Footer/Footer'
 import SignUpForm from "./components/SignUpForm/SignUpForm"
 import SignInForm from "./components/SignInForm/SignInForm"
 import Landing from "./components/Landing/Landing"
@@ -48,7 +49,7 @@ function App() {
   return (
     <>
       <NavBar />
-      
+
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
@@ -67,6 +68,7 @@ function App() {
           </>
         )}
       </Routes>
+      <Footer />
     </>
   )
 }

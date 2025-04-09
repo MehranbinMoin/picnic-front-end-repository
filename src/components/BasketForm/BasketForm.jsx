@@ -49,8 +49,12 @@ const BasketForm = (props) => {
 
 return (
     <>
-    { basketDetails?.author?._id === user._id ? 
-    (<main className={styles.form}>
+    { basketId && basketDetails?.author?._id !== user._id ? (
+        <>
+        <h1>You don't have permission to edit this basket!</h1>
+        </>
+    ) : (
+    <main className={styles.form}>
         <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
         <form onSubmit={handleSubmit}>
             <label>Photo of basket</label>
@@ -100,12 +104,9 @@ return (
                 onChange={handleChange}
             />
             <br></br>
-            <button className={styles.button} type="submit">Create Basket</button>
+            <button className={styles.button} type="submit">{basketId ? 'Update Basket' : 'Create Basket'}</button>
         </form>
-    </main>) : (<>
-    <h1>You don't have permission to edit this basket!</h1>
-    </>)
+    </main>)
 } </>
-)
-}
+)}
 export default BasketForm;

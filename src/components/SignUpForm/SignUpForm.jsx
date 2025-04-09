@@ -96,10 +96,6 @@ const SignUpForm = () => {
                     <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
-            <footer>
-                <img src={FooterLogo} className="FooterLogo" alt="Footer logo of a rabbit and turtle"></img>
-            </footer>
-            <footer>© 2025 picnic</footer>
         </main>
     )
 }

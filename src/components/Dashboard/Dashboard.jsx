@@ -23,7 +23,6 @@ const youtubeVideo = 'hIIzBwenOAs'
           allowFullScreen
         ></iframe>
       </div>
-      <footer>© 2025 picnic</footer>
     </main>
   )
 }
