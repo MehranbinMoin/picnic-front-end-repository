@@ -70,25 +70,26 @@ const BasketDetails = (props) => {
             <section className={styles.commentSection}>
                 <h2>Comments</h2>
                 <CommentForm handleAddComment={handleAddComment} />
+                <br></br>
                 {!basket.comments.length && <p>No comments</p>}
                 {basket.comments.map((comment) => (
-                    <article key={comment._id}>
+                    <article className={styles.individualComment} key={comment._id}>
                         <header className={styles.commentHeader}>
                             <p>
                                 {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
                             </p>
                             {comment.author._id === user._id && (
-                                <>
+                                <div className={styles.editPlusDeleteButtons}>
                                     <Link to={`/baskets/${basket._id}/comments/${comment._id}/edit`}>Edit comment</Link>
                                     <br></br>
                                     <br></br>
                                     <button className={styles.button} onClick={() => handleDeleteComment(comment._id)}>Delete comment</button>
-                                </>
+                                </div>
                             )}
                         </header>
-                        <p>
+                        <div>
                             {comment.text}
-                        </p>
+                        </div>
                     </article>
                 ))}
             </section>

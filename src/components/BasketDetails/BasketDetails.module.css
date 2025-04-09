@@ -65,3 +65,16 @@
 h2, h3 {
     margin: 10px 0;
 }
+
+.individualComment {
+    background-color:  orange;
+    width: auto;
+    height: auto;
+}
+
+.editPlusDeleteButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 15px 0px 15px;
+}
