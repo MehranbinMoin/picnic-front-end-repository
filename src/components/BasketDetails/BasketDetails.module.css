@@ -4,7 +4,6 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    background-color: orange;
 }
 
 .imageContainer {
@@ -102,6 +101,9 @@ h2, h3 {
     background-color:  orange;
     width: auto;
     height: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .editPlusDeleteButtons {
