@@ -76,7 +76,7 @@ const BasketDetails = (props) => {
                     {basket.comments.map((comment) => (
                         <article className={styles.individualComment} key={comment._id}>
                             <header className={styles.commentHeader}>
-                                <p>
+                                <p className={styles.individualComment}>
                                     {`${comment.author.username} posted on ${new Date(comment.createdAt).toLocaleDateString()}`}
                                 </p>
                                 {comment.author._id === user._id && (
@@ -88,7 +88,7 @@ const BasketDetails = (props) => {
                                     </div>
                                 )}
                             </header>
-                            <div>
+                            <div className={styles.individualComment}>
                                 {comment.text}
                             </div>
                         </article>
