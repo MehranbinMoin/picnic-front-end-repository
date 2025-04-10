@@ -19,6 +19,7 @@ A user can sign into the Picnic app to create a basket of food they would like t
 2. Used the following resrouce to help with styling buttons on the app: https://www.w3schools.com/css/css3_buttons.asp
 3. Used Cloudinary for the photo upload feature on basket form: https://cloudinary.com/documentation/react_integration
 4. Used the following resource to help with embedding YouTube video onto the dashboard: https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2 
+5. GA Module 3 level up lab for the search bar functionality: https://generalassembly.instructure.com/courses/539/assignments/11218?module_item_id=43198 
 
 **Technologies used**: HTML, CSS. JavaScript, Express, Node, React, MongoDB
 
