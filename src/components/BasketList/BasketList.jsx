@@ -21,7 +21,7 @@ const BasketList = (props) => {
                 <div className={styles.searchContainer}>
                     <input
                         type="text"
-                        placeholder="Search by keyword and/or city...hope you get something delish!"
+                        placeholder="Search by keyword or city...hope you find something delish!"
                         value={searchTerm}
                         onChange={handleSearchChange}
                         className={styles.searchBar}
