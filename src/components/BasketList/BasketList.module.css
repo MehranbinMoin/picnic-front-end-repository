@@ -67,3 +67,41 @@
     box-sizing: border-box;
     transition: background-color 0.3s ease;
 }
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+
+  .searchBar {
+    width: 50%;
+    max-width: 500px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 3px solid rgb(45, 106, 79);
+    border-radius: 25px;
+    background-color: white;
+    color: black; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .searchBar:focus {
+    outline: none;
+    border-color: rgb(192, 57, 109);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .searchBar::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .searchBar {
+      width: 80%;
+    }
+  }
