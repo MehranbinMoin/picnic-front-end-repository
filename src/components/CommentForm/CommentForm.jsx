@@ -26,7 +26,7 @@ const CommentForm = (props) => {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         if (basketId && commentId) {
-           await basketService.updateComment(basketId, commentId, formData);
+            await basketService.updateComment(basketId, commentId, formData);
             navigate(`/baskets/${basketId}`);
         } else {
             props.handleAddComment(formData);
@@ -36,21 +36,21 @@ const CommentForm = (props) => {
 
     return (
         <div className="content-container">
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='text-input'>Your comments:</label>
-            <br></br>
-            <textarea
-                className={styles.formInput}
-                required
-                type='text'
-                name='text'
-                id='text-input'
-                value={formData.text}
-                onChange={handleChange}
-            />
-            <br></br>
-            <button className={styles.button} type='submit'>Add Comment</button>
-        </form>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='text-input'>Your comments:</label>
+                <br></br>
+                <textarea
+                    className={styles.formInput}
+                    required
+                    type='text'
+                    name='text'
+                    id='text-input'
+                    value={formData.text}
+                    onChange={handleChange}
+                />
+                <br></br>
+                <button className={styles.button} type='submit'>Add Comment</button>
+            </form>
         </div>
     );
 };

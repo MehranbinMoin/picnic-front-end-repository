@@ -45,66 +45,67 @@ const BasketForm = (props) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
     }
 
-return (
-    <div className="content-container">
-    { basketId && basketDetails?.author?._id !== user._id ? (
-        <>
-        <h1>You don't have permission to edit this basket!</h1>
-        </>
-    ) : (
-    <main className={styles.form}>
-        <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
-        <form onSubmit={handleSubmit}>
-            <label>Photo of basket</label>
-            <UploadWidget formData={formData} setFormData={setFormData}/>
-            <br></br>
-            <label htmlFor="title">Basket Title</label>
-            <input
-                className={styles.formInput}
-                type="text"
-                required
-                name="title"
-                id="title"
-                value={formData.title}
-                onChange={handleChange}
-            />
-            <br></br>
-            <label htmlFor="description">Basket Description</label>
-            <textarea
-                className={styles.formInput}
-                type="text"
-                required
-                name="description"
-                id="description"
-                value={formData.description}
-                onChange={handleChange}
-            />
-            <br></br>
-            <label htmlFor="city">City Location</label>
-            <input
-                className={styles.formInput}
-                type="text"
-                required
-                name="city"
-                id="city"
-                value={formData.city}
-                onChange={handleChange}
-            />
-            <br></br>
-            <label htmlFor="email">Email</label>
-            <input
-                className={styles.formInput}
-                type="text"
-                required
-                name="email"
-                id="email"
-                value={formData.email}
-                onChange={handleChange}
-            />
-            <br></br>
-            <button className={styles.button} type="submit">{basketId ? 'Update Basket' : 'Create Basket'}</button>
-        </form>
-    </main>)
-} </div> 
-)}
+    return (
+        <div className="content-container">
+            {basketId && basketDetails?.author?._id !== user._id ? (
+                <>
+                    <h1>You don't have permission to edit this basket!</h1>
+                </>
+            ) : (
+                <main className={styles.form}>
+                    <h1>{basketId ? 'Edit basket' : 'New basket'}</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>Photo of basket</label>
+                        <UploadWidget formData={formData} setFormData={setFormData} />
+                        <br></br>
+                        <label htmlFor="title">Basket Title</label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            required
+                            name="title"
+                            id="title"
+                            value={formData.title}
+                            onChange={handleChange}
+                        />
+                        <br></br>
+                        <label htmlFor="description">Basket Description</label>
+                        <textarea
+                            className={styles.formInput}
+                            type="text"
+                            required
+                            name="description"
+                            id="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                        />
+                        <br></br>
+                        <label htmlFor="city">City Location</label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            required
+                            name="city"
+                            id="city"
+                            value={formData.city}
+                            onChange={handleChange}
+                        />
+                        <br></br>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            required
+                            name="email"
+                            id="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        <br></br>
+                        <button className={styles.button} type="submit">{basketId ? 'Update Basket' : 'Create Basket'}</button>
+                    </form>
+                </main>)
+            } </div>
+    )
+}
 export default BasketForm;

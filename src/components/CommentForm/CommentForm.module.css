@@ -5,11 +5,10 @@
 .button {
     background-color: rgb(255, 105, 110);
     border-radius: 5px;
-    transition-duration: 0.4s 
+    transition-duration: 0.4s
 }
 
 .button:hover {
     background-color: #04AA6D;
     color: white;
-  }
-
+}

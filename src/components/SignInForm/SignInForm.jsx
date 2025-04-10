@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import { signIn } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
 import styles from './SignInForm.module.css'
-import FooterLogo from "../../assets/Photos/footer.png"
 
 const SignInForm = () => {
     const navigate = useNavigate()
@@ -42,45 +41,45 @@ const SignInForm = () => {
 
     return (
         <div className="content-container">
-        <main className={styles.form}>
-            <h1>Log in</h1>
-            <p>{message}</p>
+            <main className={styles.form}>
+                <h1>Log in</h1>
+                <p>{message}</p>
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username: </label>
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <br></br>
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <br></br>
-                <div>
-                    <button className={styles.button} disabled={isFormInvalid()} type="submit">Log in</button>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="username">Username: </label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <br></br>
+                    <div>
+                        <label htmlFor="password">Password: </label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <br></br>
-                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
-                </div>
-            </form>
-        </main>
+                    <div>
+                        <button className={styles.button} disabled={isFormInvalid()} type="submit">Log in</button>
+                        <br></br>
+                        <br></br>
+                        <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
+                    </div>
+                </form>
+            </main>
         </div>
     )
 }

@@ -36,11 +36,11 @@
 
 .navList li a {
   color: white;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .navList li a:hover {
-  color: #ff97dc; 
+  color: #ff97dc;
 }
 
 .welcomeItem {

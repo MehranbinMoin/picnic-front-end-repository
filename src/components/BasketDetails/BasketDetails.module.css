@@ -1,116 +1,117 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .imageContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-    padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 10px;
 }
 
 .form {
-    border: 10px rgb(45, 106, 79) solid;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 700px;
-    max-width: 90%;
-    margin: auto;
-    background-color: rgb(192, 57, 109);
+  border: 10px rgb(45, 106, 79) solid;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  max-width: 90%;
+  margin: auto;
+  background-color: rgb(192, 57, 109);
 }
 
 .BasketImage {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
 }
 
 .button {
-    background-color: rgb(255, 105, 110);
-    border-radius: 5px;
-    transition-duration: 0.4s 
+  background-color: rgb(255, 105, 110);
+  border-radius: 5px;
+  transition-duration: 0.4s
 }
 
 .button:hover {
-    background-color: #04AA6D;
-    color: white;
-  }
+  background-color: #04AA6D;
+  color: white;
+}
 
-  .editBasketButton {
-    background-color: rgb(255, 105, 110);
-    border-radius: 5px;
-    transition-duration: 0.4s
-  }
+.editBasketButton {
+  background-color: rgb(255, 105, 110);
+  border-radius: 5px;
+  transition-duration: 0.4s
+}
 
-  .editBasketButton:hover {
-    background-color: #04AA6D;
-    color: white;
-  }
+.editBasketButton:hover {
+  background-color: #04AA6D;
+  color: white;
+}
 
-  .editBasketButtonColor {
-    color: white;
-    font-weight: 400;
-  }
+.editBasketButtonColor {
+  color: white;
+  font-weight: 400;
+}
 
-  .editCommentButton {
-    background-color: rgb(255, 105, 110);
-    border-radius: 5px;
-    transition-duration: 0.4s
-  }
+.editCommentButton {
+  background-color: rgb(255, 105, 110);
+  border-radius: 5px;
+  transition-duration: 0.4s
+}
 
-  .editCommentButton:hover {
-    background-color: #04AA6D;
-    color: white;
-  }
+.editCommentButton:hover {
+  background-color: #04AA6D;
+  color: white;
+}
 
-  .editCommentButtonColor {
-    color: white;
-    font-weight: 400;
-  }
+.editCommentButtonColor {
+  color: white;
+  font-weight: 400;
+}
 
-  section {
-    width: 100%;
-    margin-top: 20px;
-  }
+section {
+  width: 100%;
+  margin-top: 20px;
+}
 
 .commentSection {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .commentHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-h2, h3 {
-    margin: 10px 0;
+h2,
+h3 {
+  margin: 10px 0;
 }
 
 .individualComment {
-    background-color:  rgb(246, 242, 232);
-    width: auto;
-    height: auto;
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 8px;
-    color: black;
+  background-color: rgb(246, 242, 232);
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  color: black;
 }
 
 .editPlusDeleteButtons {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-    margin: 15px 15px 0px 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  margin: 15px 15px 0px 15px;
 }

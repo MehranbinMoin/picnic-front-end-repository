@@ -3,7 +3,6 @@ import { useNavigate } from "react-router";
 import { signUp } from "../../services/authService";
 import { UserContext } from "../../contexts/UserContext";
 import styles from './SignUpForm.module.css'
-import FooterLogo from "../../assets/Photos/footer.png"
 
 const SignUpForm = () => {
     const navigate = useNavigate()
@@ -46,58 +45,58 @@ const SignUpForm = () => {
 
     return (
         <div className="content-container">
-        <main className={styles.form}>
-            <h1>Sign up</h1>
-            <p>{message}</p>
+            <main className={styles.form}>
+                <h1>Sign up</h1>
+                <p>{message}</p>
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username: </label>
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <br></br>
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <br></br>
-                <div>
-                    <label htmlFor="passwordConfirmation">Confirm password: </label>
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        id="passwordConfirmation"
-                        name="passwordConfirmation"
-                        value={formData.passwordConfirmation}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <br></br>
-                <div>
-                    <button className={styles.button} disabled={isFormInvalid()} type="submit">Sign up</button>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="username">Username: </label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <br></br>
+                    <div>
+                        <label htmlFor="password">Password: </label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <br></br>
-                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
-                </div>
-            </form>
-        </main>
+                    <div>
+                        <label htmlFor="passwordConfirmation">Confirm password: </label>
+                        <input
+                            className={styles.formInput}
+                            type="text"
+                            id="passwordConfirmation"
+                            name="passwordConfirmation"
+                            value={formData.passwordConfirmation}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <br></br>
+                    <div>
+                        <button className={styles.button} disabled={isFormInvalid()} type="submit">Sign up</button>
+                        <br></br>
+                        <br></br>
+                        <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
+                    </div>
+                </form>
+            </main>
         </div>
     )
 }

@@ -6,12 +6,12 @@ import HeaderLogo from "../../assets/Photos/headerLogo.png"
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext)
-  
+
   const handleLogOut = () => {
     localStorage.removeItem('token')
     setUser(null)
   }
-  
+
   return (
     <nav className={styles.container}>
       <div className={styles.logoContainer}>
