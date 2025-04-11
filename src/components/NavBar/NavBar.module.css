@@ -14,7 +14,7 @@
 }
 
 .container img {
-  width: 50px;
+  width: 100px;
   margin-left: 21px;
 }
 
@@ -40,7 +40,8 @@
 }
 
 .navList li a:hover {
-  color: #ff97dc;
+  color: 
+#ff97dc;
 }
 
 .welcomeItem {
