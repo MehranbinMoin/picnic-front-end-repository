@@ -50,7 +50,7 @@ const SignUpForm = () => {
                 <p>{message}</p>
 
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className={styles.formGroup}>
                         <label htmlFor="username">Username: </label>
                         <input
                             className={styles.formInput}
@@ -62,8 +62,8 @@ const SignUpForm = () => {
                             required
                         />
                     </div>
-                    <br></br>
-                    <div>
+                    
+                    <div className={styles.formGroup}>
                         <label htmlFor="password">Password: </label>
                         <input
                             className={styles.formInput}
@@ -75,8 +75,8 @@ const SignUpForm = () => {
                             required
                         />
                     </div>
-                    <br></br>
-                    <div>
+                    
+                    <div className={styles.formGroup}>
                         <label htmlFor="passwordConfirmation">Confirm password: </label>
                         <input
                             className={styles.formInput}
@@ -88,11 +88,10 @@ const SignUpForm = () => {
                             required
                         />
                     </div>
-                    <br></br>
-                    <div>
+                   
+                    <div className={styles.buttonContainer}>
                         <button className={styles.button} disabled={isFormInvalid()} type="submit">Sign up</button>
-                        <br></br>
-                        <br></br>
+                        
                         <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                     </div>
                 </form>

@@ -1,11 +1,54 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5333f;
+  padding: 2rem;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 450px;
+  margin: 5rem auto 0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
 .formInput {
   color: black;
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 1rem;
 }
 
 .button {
   background-color: rgb(255, 105, 110);
   border-radius: 5px;
-  transition-duration: 0.4s
+  transition-duration: 0.4s;
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -13,9 +56,8 @@
   color: white;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }
