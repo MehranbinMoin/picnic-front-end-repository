@@ -6,6 +6,14 @@
   padding: 20px;
 }
 
+.title {
+height: auto;
+width: auto;
+background-color: rgb(255, 255, 255);
+color: black;
+border-radius: 8px;
+}
+
 .imageContainer {
   width: 100%;
   display: flex;

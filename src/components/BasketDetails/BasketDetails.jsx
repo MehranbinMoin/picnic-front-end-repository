@@ -46,7 +46,7 @@ const BasketDetails = (props) => {
                 <main className={styles.form}>
                     <section>
                         <header>
-                            <p>
+                            <p className={styles.title}>
                                 {`${basket.author.username} created this basket on ${new Date(basket.createdAt).toLocaleDateString()}`}
                             </p>
                             <br></br>
